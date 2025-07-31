@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function check(){
+            var a=parseFloat(document.getElementById("a").value);
+            var b=parseFloat(document.getElementById("b").value);
+            var c=parseFloat(document.getElementById("c").value);
+            if(a+b>c && b+c>a && a+c>b )
+        {
+            let type;
+            if(a===b&&b===c){
+                type="equtorial";
+            }
+            else if(a===b||b===c||a===c)
+            {
+                type="isosceles";
+            }
+            else{
+                type="scalene";
+            }
+            //semiperimeter
+            let s=(a+b+c)/2;
+            let area=Math.sqrt(s*(s-a)*(s-b)*(s-c));
+            alert("triangle is " + type + "\narea= " + area);
+
+        }
+        else{
+            alert("cannot find");
+        }
+        }
+    </script>
+</head>
+<body>
+    <input type="number" id="a" placeholder="side a">
+    <input type="number" id="b" placeholder="side b">
+    <input type="number" id="c" placeholder="side c">
+    <button onclick="check()">click</button>
+</body>
+</html>
